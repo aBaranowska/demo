@@ -5,12 +5,10 @@ import java.util.List;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.rec.demo.entity.TimeTrackEntity;
 
 @Repository
-@Transactional
 public class TimeTrackDAOImpl extends BaseDAOImpl implements TimeTrackDAO {
 
 	public List<TimeTrackEntity> getAllTimeTracks() {

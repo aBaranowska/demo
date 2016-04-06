@@ -5,13 +5,11 @@ import java.util.List;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.rec.demo.dao.exception.UserDAOException;
 import com.rec.demo.entity.UserEntity;
 
 @Repository
-@Transactional
 public class UserDAOImpl extends BaseDAOImpl implements UserDAO {
 
 	public List<UserEntity> getAllUsers() {

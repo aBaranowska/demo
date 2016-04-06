@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rec.demo.dao.ProjectDAO;
 import com.rec.demo.dao.TimeTrackDAO;
@@ -20,6 +21,7 @@ import com.rec.demo.entity.UserEntity;
 import com.rec.demo.service.exception.TimeTrackServiceException;
 
 @Service
+@Transactional
 public class TimeTrackServiceImpl implements TimeTrackService {
 
 	private static final int FIRST_NAME_USER_REGEX_GROUP = 2;

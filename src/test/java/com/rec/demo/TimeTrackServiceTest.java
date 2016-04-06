@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rec.demo.config.JpaConfig;
 import com.rec.demo.config.PropertyConfig;
@@ -27,6 +28,7 @@ import com.rec.demo.service.TimeTrackService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { JpaConfig.class, PropertyConfig.class })
+@Transactional
 public class TimeTrackServiceTest {
 
 	@Autowired

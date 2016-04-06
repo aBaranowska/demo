@@ -5,13 +5,10 @@ import java.util.List;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.rec.demo.dao.exception.ProjectDAOException;
 import com.rec.demo.entity.ProjectEntity;
 
 @Repository
-@Transactional
 public class ProjectDAOImpl extends BaseDAOImpl implements ProjectDAO {
 
 	public List<ProjectEntity> getAllProjects() {

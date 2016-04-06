@@ -10,18 +10,19 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.rec.demo.config.JpaConfig;
+import com.rec.demo.config.PropertyConfig;
 import com.rec.demo.dao.UserDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { JpaConfig.class })
+@ContextConfiguration(classes = { JpaConfig.class, PropertyConfig.class })
 public class UserDAOTest {
 
 	@Autowired
-	UserDAO userDAO;
+	private UserDAO userDAO;
 
 	@Test
 	@Rollback(true)
-	public void checkConfig() {
+	public void getAllUsers() {
 		assertTrue(userDAO.getAllUsers().size() == 0);
 	}
 

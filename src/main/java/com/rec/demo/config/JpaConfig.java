@@ -17,13 +17,13 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan(basePackages = { "com.rec.demo.dao" })
+@ComponentScan(basePackages = { "com.rec.demo.dao", "com.rec.demo.service" })
 @EnableTransactionManagement
 public class JpaConfig {
 
 	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource,
-			JpaVendorAdapter jpaVendeorAdapter) {
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory(final DataSource dataSource,
+			final JpaVendorAdapter jpaVendeorAdapter) {
 		LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
 		entityManagerFactory.setDataSource(dataSource);
 		entityManagerFactory.setJpaVendorAdapter(jpaVendeorAdapter);
@@ -47,7 +47,7 @@ public class JpaConfig {
 	}
 
 	@Bean
-	public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
+	public PlatformTransactionManager transactionManager(final EntityManagerFactory emf) {
 		JpaTransactionManager transactionManager = new JpaTransactionManager(emf);
 		return transactionManager;
 	}

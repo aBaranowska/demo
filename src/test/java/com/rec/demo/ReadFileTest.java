@@ -24,9 +24,11 @@ public class ReadFileTest {
 		Iterator<Row> rowIterator = sheet.iterator();
 		while (rowIterator.hasNext()) {
 			Row row = rowIterator.next();
+			System.out.println("row: " + (row.getRowNum() + 1));
 			Iterator<Cell> cellIterator = row.cellIterator();
 			while (cellIterator.hasNext()) {
 				Cell cell = cellIterator.next();
+				System.out.println("cell: " + (cell.getColumnIndex() + 1));
 				if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
 					System.out.println(cell.getStringCellValue());
 				} else if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {

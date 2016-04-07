@@ -98,11 +98,11 @@ public class TimeTrackServiceTest {
 		assertEquals(project, projectEntity.getProject());
 		assertEquals(task, projectEntity.getTask());
 
-		TimeTrackEntity timeTrack = timeTrackDAO.getAllTimeTracks().get(0);
-		assertEquals(userEntity.getId(), timeTrack.getUser().getId());
-		assertEquals(projectEntity.getId(), timeTrack.getProject().getId());
-		assertEquals(parsedDate, timeTrack.getDate());
-		assertEquals(spentTime, timeTrack.getSpentTime());
+		TimeTrackEntity timeTrackEntity = timeTrackDAO.getAllTimeTracks().get(0);
+		assertEquals(userEntity.getId(), timeTrackEntity.getUser().getId());
+		assertEquals(projectEntity.getId(), timeTrackEntity.getProject().getId());
+		assertEquals(parsedDate, timeTrackEntity.getDate());
+		assertEquals(spentTime, timeTrackEntity.getSpentTime());
 	}
 
 }

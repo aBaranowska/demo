@@ -1,8 +1,7 @@
 package com.rec.demo.dao.exception;
 
+@SuppressWarnings("serial")
 public class UserDAOException extends RuntimeException {
-
-	private static final long serialVersionUID = 1L;
 
 	public static final String NULL_QUERY_PARAMETER = "null query parameter";
 

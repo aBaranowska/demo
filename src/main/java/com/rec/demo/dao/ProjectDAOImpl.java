@@ -16,7 +16,8 @@ public class ProjectDAOImpl extends BaseDAOImpl implements ProjectDAO {
 		return query.getResultList();
 	}
 
-	public ProjectEntity getProject(String customer, String project, String task) throws ProjectDAOException {
+	public ProjectEntity getProject(final String customer, final String project, final String task)
+			throws ProjectDAOException {
 		if (customer == null || project == null || task == null) {
 			throw new ProjectDAOException(ProjectDAOException.NULL_QUERY_PARAMETER);
 		}

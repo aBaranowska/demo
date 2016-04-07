@@ -71,7 +71,7 @@ public class TimeTrackEntity {
 		return spentTime;
 	}
 
-	public void setSpentTime(Double spentTime) {
+	public void setSpentTime(final Double spentTime) {
 		this.spentTime = spentTime;
 	}
 

@@ -23,6 +23,7 @@ public class ProjectEntity {
 	@Column
 	private String task;
 
+	// TODO extProjectType
 	// TODO extProjectNumber
 	// TODO extTaskNumber
 

@@ -23,7 +23,7 @@ public class EmbeddedJpaConfig {
 	public static final String JPA_VA = "embedded_jpa_va";
 	public static final String DS = "embedded_ds";
 	public static final String TM = "embedded_tm";
-	public static final String PACKAGES = "com.rec.demo.entity.embedded";
+	public static final String PACKAGES = "com.rec.entity.embedded";
 	public static final String DIALECT = "org.hibernate.dialect.H2Dialect";
 
 	@Bean(name = EMF)

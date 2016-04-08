@@ -16,7 +16,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan({ "" })
+@ComponentScan({ "com.rec.demo.dao2" })
 @EnableTransactionManagement
 public class Jpa2Config {
 

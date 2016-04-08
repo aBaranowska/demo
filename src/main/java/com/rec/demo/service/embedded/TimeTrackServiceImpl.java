@@ -1,4 +1,4 @@
-package com.rec.demo.service;
+package com.rec.demo.service.embedded;
 
 import java.util.Date;
 import java.util.regex.Matcher;
@@ -9,26 +9,25 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rec.demo.dao.ProjectDAO;
-import com.rec.demo.dao.TimeTrackDAO;
-import com.rec.demo.dao.UserDAO;
-import com.rec.demo.dao.exception.ProjectDAOException;
-import com.rec.demo.dao.exception.UserDAOException;
+import com.rec.demo.config.EmbeddedJpaConfig;
+import com.rec.demo.dao.embedded.ProjectDAO;
+import com.rec.demo.dao.embedded.TimeTrackDAO;
+import com.rec.demo.dao.embedded.UserDAO;
 import com.rec.demo.dto.TimeTrackDTO;
-import com.rec.demo.entity.ProjectEntity;
-import com.rec.demo.entity.TimeTrackEntity;
-import com.rec.demo.entity.UserEntity;
-import com.rec.demo.service.exception.TimeTrackServiceException;
+import com.rec.demo.entity.embedded.ProjectEntity;
+import com.rec.demo.entity.embedded.TimeTrackEntity;
+import com.rec.demo.entity.embedded.UserEntity;
+import com.rec.demo.exception.ProjectDAOException;
+import com.rec.demo.exception.TimeTrackServiceException;
+import com.rec.demo.exception.UserDAOException;
 
 @Service
-@Transactional("tm")
+@Transactional(value = EmbeddedJpaConfig.TM)
 public class TimeTrackServiceImpl implements TimeTrackService {
 
-	private static final int FIRST_NAME_USER_REGEX_GROUP = 2;
-
-	private static final int LAST_NAME_USER_REGEX_GROUP = 1;
-
-	private static final int LOGIN_USER_REGEX_GROUP = 3;
+	public static final int FIRST_NAME_USER_REGEX_GROUP = 2;
+	public static final int LAST_NAME_USER_REGEX_GROUP = 1;
+	public static final int LOGIN_USER_REGEX_GROUP = 3;
 
 	@Autowired
 	private UserDAO userDAO;

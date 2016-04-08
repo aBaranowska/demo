@@ -1,4 +1,4 @@
-package com.rec.demo.dao2.exception;
+package com.rec.demo.exception;
 
 @SuppressWarnings("serial")
 public class EmployeeDAOException extends RuntimeException {

@@ -1,9 +1,9 @@
-package com.rec.demo.dao;
+package com.rec.demo.dao.embedded;
 
 import java.util.List;
 
-import com.rec.demo.dao.exception.ProjectDAOException;
-import com.rec.demo.entity.ProjectEntity;
+import com.rec.demo.entity.embedded.ProjectEntity;
+import com.rec.demo.exception.ProjectDAOException;
 
 public interface ProjectDAO {
 

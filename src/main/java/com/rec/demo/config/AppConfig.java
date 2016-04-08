@@ -1,11 +1,15 @@
 package com.rec.demo.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@Import({ JpaConfig.class, Jpa2Config.class, PropertyConfig.class })
+@Import({ EmbeddedJpaConfig.class, SQLServerJpaConfig.class, PropertyConfig.class })
+@ComponentScan({ "com.rec.demo.dao", "com.rec.demo.service" })
+@EnableTransactionManagement
 public class AppConfig {
 
 	@Bean

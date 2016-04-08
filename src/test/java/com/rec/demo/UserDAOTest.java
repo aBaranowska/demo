@@ -9,7 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.rec.demo.config.AppConfig;
-import com.rec.demo.dao.UserDAO;
+import com.rec.demo.dao.embedded.UserDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { AppConfig.class })

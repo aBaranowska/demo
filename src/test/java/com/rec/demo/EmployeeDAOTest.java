@@ -11,12 +11,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rec.demo.config.AppConfig;
-import com.rec.demo.dao2.EmployeeDAO;
-import com.rec.demo.dto2.EmployeeDTO;
+import com.rec.demo.config.SQLServerJpaConfig;
+import com.rec.demo.dao.sqlserver.EmployeeDAO;
+import com.rec.demo.dto.EmployeeDTO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { AppConfig.class })
-@Transactional("tm2")
+@Transactional(value = SQLServerJpaConfig.TM)
 public class EmployeeDAOTest {
 
 	@Autowired

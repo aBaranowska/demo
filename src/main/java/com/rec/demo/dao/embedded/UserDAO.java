@@ -1,9 +1,9 @@
-package com.rec.demo.dao;
+package com.rec.demo.dao.embedded;
 
 import java.util.List;
 
-import com.rec.demo.dao.exception.UserDAOException;
-import com.rec.demo.entity.UserEntity;
+import com.rec.demo.entity.embedded.UserEntity;
+import com.rec.demo.exception.UserDAOException;
 
 public interface UserDAO {
 

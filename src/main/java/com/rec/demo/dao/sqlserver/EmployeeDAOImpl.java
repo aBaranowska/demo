@@ -1,4 +1,4 @@
-package com.rec.demo.dao2;
+package com.rec.demo.dao.sqlserver;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.hibernate.transform.Transformers;
 import org.hibernate.type.StandardBasicTypes;
 import org.springframework.stereotype.Repository;
 
-import com.rec.demo.dao2.exception.EmployeeDAOException;
-import com.rec.demo.dto2.EmployeeDTO;
+import com.rec.demo.dto.EmployeeDTO;
+import com.rec.demo.exception.EmployeeDAOException;
 
 @Repository
 public class EmployeeDAOImpl extends BaseDAOImpl implements EmployeeDAO {

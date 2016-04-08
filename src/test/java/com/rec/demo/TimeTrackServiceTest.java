@@ -16,18 +16,19 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rec.demo.config.AppConfig;
-import com.rec.demo.dao.ProjectDAO;
-import com.rec.demo.dao.TimeTrackDAO;
-import com.rec.demo.dao.UserDAO;
+import com.rec.demo.config.EmbeddedJpaConfig;
+import com.rec.demo.dao.embedded.ProjectDAO;
+import com.rec.demo.dao.embedded.TimeTrackDAO;
+import com.rec.demo.dao.embedded.UserDAO;
 import com.rec.demo.dto.TimeTrackDTO;
-import com.rec.demo.entity.ProjectEntity;
-import com.rec.demo.entity.TimeTrackEntity;
-import com.rec.demo.entity.UserEntity;
-import com.rec.demo.service.TimeTrackService;
+import com.rec.demo.entity.embedded.ProjectEntity;
+import com.rec.demo.entity.embedded.TimeTrackEntity;
+import com.rec.demo.entity.embedded.UserEntity;
+import com.rec.demo.service.embedded.TimeTrackService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { AppConfig.class })
-@Transactional("tm")
+@Transactional(value = EmbeddedJpaConfig.TM)
 public class TimeTrackServiceTest {
 
 	@Autowired

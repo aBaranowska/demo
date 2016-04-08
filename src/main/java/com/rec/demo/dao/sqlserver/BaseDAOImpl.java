@@ -1,11 +1,13 @@
-package com.rec.demo.dao2;
+package com.rec.demo.dao.sqlserver;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import com.rec.demo.config.SQLServerJpaConfig;
+
 public class BaseDAOImpl {
 
-	@PersistenceContext(unitName = "pu2")
+	@PersistenceContext(unitName = SQLServerJpaConfig.PU)
 	protected EntityManager entityManager;
 
 }

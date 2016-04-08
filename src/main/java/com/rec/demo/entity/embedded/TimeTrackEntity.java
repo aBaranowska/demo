@@ -1,4 +1,4 @@
-package com.rec.demo.entity;
+package com.rec.demo.entity.embedded;
 
 import java.util.Date;
 

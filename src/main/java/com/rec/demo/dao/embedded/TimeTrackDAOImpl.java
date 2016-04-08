@@ -1,4 +1,4 @@
-package com.rec.demo.dao;
+package com.rec.demo.dao.embedded;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
-import com.rec.demo.entity.TimeTrackEntity;
+import com.rec.demo.entity.embedded.TimeTrackEntity;
 
 @Repository
 public class TimeTrackDAOImpl extends BaseDAOImpl implements TimeTrackDAO {

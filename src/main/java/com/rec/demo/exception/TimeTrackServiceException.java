@@ -1,4 +1,4 @@
-package com.rec.demo.service.exception;
+package com.rec.demo.exception;
 
 @SuppressWarnings("serial")
 public class TimeTrackServiceException extends RuntimeException {

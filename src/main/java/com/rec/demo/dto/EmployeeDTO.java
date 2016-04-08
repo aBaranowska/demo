@@ -1,4 +1,4 @@
-package com.rec.demo.dto2;
+package com.rec.demo.dto;
 
 public class EmployeeDTO {
 

@@ -1,4 +1,4 @@
-package com.rec.demo.dao;
+package com.rec.demo.dao.embedded;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
-import com.rec.demo.dao.exception.UserDAOException;
-import com.rec.demo.entity.UserEntity;
+import com.rec.demo.entity.embedded.UserEntity;
+import com.rec.demo.exception.UserDAOException;
 
 @Repository
 public class UserDAOImpl extends BaseDAOImpl implements UserDAO {

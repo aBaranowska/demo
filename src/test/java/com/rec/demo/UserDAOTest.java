@@ -8,12 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.rec.demo.config.JpaConfig;
-import com.rec.demo.config.PropertyConfig;
+import com.rec.demo.config.AppConfig;
 import com.rec.demo.dao.UserDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { JpaConfig.class, PropertyConfig.class })
+@ContextConfiguration(classes = { AppConfig.class })
 public class UserDAOTest {
 
 	@Autowired

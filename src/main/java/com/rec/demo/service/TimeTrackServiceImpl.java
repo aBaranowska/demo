@@ -21,7 +21,7 @@ import com.rec.demo.entity.UserEntity;
 import com.rec.demo.service.exception.TimeTrackServiceException;
 
 @Service
-@Transactional
+@Transactional("tm")
 public class TimeTrackServiceImpl implements TimeTrackService {
 
 	private static final int FIRST_NAME_USER_REGEX_GROUP = 2;

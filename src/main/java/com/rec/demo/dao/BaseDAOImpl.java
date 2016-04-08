@@ -5,7 +5,7 @@ import javax.persistence.PersistenceContext;
 
 public class BaseDAOImpl {
 
-	@PersistenceContext
+	@PersistenceContext(unitName = "pu")
 	protected EntityManager entityManager;
 
 }

@@ -15,8 +15,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rec.demo.config.JpaConfig;
-import com.rec.demo.config.PropertyConfig;
+import com.rec.demo.config.AppConfig;
 import com.rec.demo.dao.ProjectDAO;
 import com.rec.demo.dao.TimeTrackDAO;
 import com.rec.demo.dao.UserDAO;
@@ -27,8 +26,8 @@ import com.rec.demo.entity.UserEntity;
 import com.rec.demo.service.TimeTrackService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { JpaConfig.class, PropertyConfig.class })
-@Transactional
+@ContextConfiguration(classes = { AppConfig.class })
+@Transactional("tm")
 public class TimeTrackServiceTest {
 
 	@Autowired

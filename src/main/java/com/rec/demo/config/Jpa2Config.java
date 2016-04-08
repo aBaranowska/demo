@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -18,38 +16,42 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan({ "com.rec.demo.dao", "com.rec.demo.service" })
+@ComponentScan({ "" })
 @EnableTransactionManagement
-public class JpaConfig {
+public class Jpa2Config {
 
-	@Bean(name = "emf")
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory(@Qualifier("ds") final DataSource dataSource,
-			@Qualifier("jva") final JpaVendorAdapter jpaVendeorAdapter) {
+	@Bean(name = "emf2")
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory(@Qualifier("ds2") final DataSource dataSource,
+			@Qualifier("jva2") final JpaVendorAdapter jpaVendeorAdapter) {
 		LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
 		entityManagerFactory.setDataSource(dataSource);
 		entityManagerFactory.setJpaVendorAdapter(jpaVendeorAdapter);
-		entityManagerFactory.setPackagesToScan("com.rec.demo.entity");
-		entityManagerFactory.setPersistenceUnitName("pu");
+		entityManagerFactory.setPackagesToScan("");
+		entityManagerFactory.setPersistenceUnitName("pu2");
 		return entityManagerFactory;
 	}
 
-	@Bean(name = "jva")
+	@Bean(name = "jva2")
 	public JpaVendorAdapter jpaVendorAdapter() {
 		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
 		adapter.setShowSql(true);
-		adapter.setGenerateDdl(true);
-		adapter.setDatabasePlatform("org.hibernate.dialect.H2Dialect");
+		adapter.setGenerateDdl(false);
+		adapter.setDatabasePlatform("org.hibernate.dialect.SQLServerDialect");
 		return adapter;
 	}
 
-	@Bean(name = "ds")
+	@Bean(name = "ds2")
 	DataSource dataSource() {
-		EmbeddedDatabase ds = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
+		DriverManagerDataSource ds = new DriverManagerDataSource();
+		ds.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		ds.setUrl("jdbc:sqlserver://172.16.6.184:1433;databaseName=DWHSnap");
+		ds.setUsername("usrREC");
+		ds.setPassword("usrREC2016");
 		return ds;
 	}
 
-	@Bean(name = "tm")
-	public PlatformTransactionManager transactionManager(@Qualifier("emf") final EntityManagerFactory emf) {
+	@Bean(name = "tm2")
+	public PlatformTransactionManager transactionManager(@Qualifier("emf2") final EntityManagerFactory emf) {
 		JpaTransactionManager transactionManager = new JpaTransactionManager(emf);
 		return transactionManager;
 	}
